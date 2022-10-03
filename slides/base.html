@@ -3200,7 +3200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; }
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section">
 
-<p><strong>Основные типы данных:</strong></p>
+<p><strong>Типы данных:</strong></p>
 
 <ul>
 <li><em>logical</em> (TRUE/FALSE)</li>
@@ -3211,16 +3211,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; }
 <li><em>raw</em> (байтовые последовательности)</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Базовые структуры данных</h2></hgroup><article  id="базовые-структуры-данных">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-1">
+
+<p><strong>Базовые структуры данных</strong></p>
 
 <ul>
-<li>вектор</li>
-<li>матрица</li>
-<li>список</li>
-<li>data.frame</li>
-<li></article></slide><slide class=""><hgroup><h2>Вектор</h2></hgroup><article  id="вектор"></li>
-<li>индексированная последовательность элементов одного типа</li>
+<li><em>вектор</em></li>
+<li><em>матрица</em></li>
+<li><em>список</em></li>
+<li><em>data.frame</em></li>
 </ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-2">
+
+<p><strong>Вектор</strong> - <em>индексированная последовательность элементов одного типа</em></p>
 
 <pre class = 'prettyprint lang-r'>a &lt;- c(2,3,4)
 typeof(a)</pre>
@@ -3232,7 +3236,9 @@ is.character(b)</pre>
 
 <pre >## [1] TRUE</pre>
 
-</article></slide><slide class=""><hgroup><h2>Вектор (продолжение)</h2></hgroup><article  id="вектор-продолжение">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-3">
+
+<p><strong>Вектор (продолжение)</strong></p>
 
 <pre class = 'prettyprint lang-r'>a &lt;- vector(length = 3)
 typeof(a)</pre>
@@ -3246,7 +3252,9 @@ typeof(a)</pre>
 
 <pre >## [1] &quot;double&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2>Вектор (продолжение)</h2></hgroup><article  id="вектор-продолжение-1">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-4">
+
+<p><strong>Вектор (продолжение)</strong></p>
 
 <p><em>Естественное приведение типов</em>: <em>logical</em> – <em>integer</em> – <em>double</em> - <em>character</em></p>
 
@@ -3255,7 +3263,9 @@ typeof(v)</pre>
 
 <pre >## [1] &quot;character&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2>Последовательности</h2></hgroup><article  id="последовательности">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-5">
+
+<p><strong>Последовательности</strong></p>
 
 <pre class = 'prettyprint lang-r'>2:10</pre>
 
@@ -3269,7 +3279,9 @@ typeof(v)</pre>
 
 <pre >## [1]  2  6 10</pre>
 
-</article></slide><slide class=""><hgroup><h2>Последовательности (продолжение)</h2></hgroup><article  id="последовательности-продолжение">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-6">
+
+<p><strong>Последовательности (продолжение)</strong></p>
 
 <pre class = 'prettyprint lang-r'>rep(1:3, times = 3)</pre>
 
@@ -3283,7 +3295,9 @@ typeof(v)</pre>
 
 <pre >## [1] 1 2 3 1 2</pre>
 
-</article></slide><slide class=""><hgroup><h2>Именованный вектор</h2></hgroup><article  id="именованный-вектор">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-7">
+
+<p><strong>Именованный вектор</strong></p>
 
 <pre class = 'prettyprint lang-r'>a &lt;- c(uno = 1, dos = 2, &#39;new&#39; = 3, 4)
 names(a)</pre>
@@ -3292,7 +3306,9 @@ names(a)</pre>
 
 <pre class = 'prettyprint lang-r'>names(a) &lt;- NA</pre>
 
-</article></slide><slide class=""><hgroup><h2>Векторизованные операции</h2></hgroup><article  id="векторизованные-операции">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-8">
+
+<p><strong>Векторизованные операции</strong></p>
 
 <p>(большинство базовых операций применяется поэлементно)</p>
 
@@ -3310,7 +3326,9 @@ a * b</pre>
 
 <pre >## [1] 3 5 7 9 3 5 7 9</pre>
 
-</article></slide><slide class=""><hgroup><h2>Индексирование векторов</h2></hgroup><article  id="индексирование-векторов">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-9">
+
+<p><strong>Индексирование векторов</strong></p>
 
 <pre class = 'prettyprint lang-r'>x &lt;- seq(10, 100, by = 10)</pre>
 
@@ -3322,7 +3340,9 @@ a * b</pre>
 
 <pre >## [1]  10  20  60  70  80  90 100</pre>
 
-</article></slide><slide class=""><hgroup><h2>Логические индексы</h2></hgroup><article  id="логические-индексы">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-10">
+
+<p><strong>Логические индексы</strong></p>
 
 <pre class = 'prettyprint lang-r'>x[rep(c(TRUE, FALSE), 5)]</pre>
 
@@ -3332,7 +3352,9 @@ a * b</pre>
 
 <pre >## [1] 80 90</pre>
 
-</article></slide><slide class=""><hgroup><h2>Мартрицы</h2></hgroup><article  id="мартрицы">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-11">
+
+<p><strong>Мартрицы</strong></p>
 
 <pre class = 'prettyprint lang-r'>matrix(1:6, nrow = 2, ncol = 3, byrow = TRUE)</pre>
 
@@ -3346,7 +3368,9 @@ a * b</pre>
 ## [1,]    1    3    5
 ## [2,]    2    4    6</pre>
 
-</article></slide><slide class=""><hgroup><h2>Атрибут dim</h2></hgroup><article  id="атрибут-dim">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-12">
+
+<p><strong>Атрибут dim</strong></p>
 
 <pre class = 'prettyprint lang-r'>m &lt;- matrix(1:6, nrow = 2)
 dim(m) &lt;- NULL
@@ -3362,7 +3386,7 @@ m</pre>
 ## [2,]    2    5
 ## [3,]    3    6</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-1">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-13">
 
 <p>_операторы (+, -, *, /) действуют поэлементно_</p>
 
@@ -3374,7 +3398,7 @@ m1 * m2</pre>
 ## [1,]    2   12   30   56   90
 ## [2,]    6   20   42   72  110</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-2">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-14">
 
 <p><em>Полезные функции для матриц</em></p>
 
@@ -3400,7 +3424,9 @@ rbind(m1, m2)</pre>
 ## [1,]    1    3    5    7    9    2    4    6    8    10
 ## [2,]    2    4    6    8   10    3    5    7    9    11</pre>
 
-</article></slide><slide class=""><hgroup><h2>apply()</h2></hgroup><article  id="apply">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-15">
+
+<p><strong>apply()</strong></p>
 
 <pre class = 'prettyprint lang-r'>m = matrix(1:15, ncol = 3)
 apply(m, MARGIN = 2, sum)</pre>
@@ -3416,7 +3442,9 @@ apply(m, MARGIN = 2, sum)</pre>
 ## [4,]    4    9   14
 ## [5,]    5   10   15</pre>
 
-</article></slide><slide class=""><hgroup><h2>Именованные матрицы</h2></hgroup><article  id="именованные-матрицы">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-16">
+
+<p><strong>Именованные матрицы</strong></p>
 
 <pre class = 'prettyprint lang-r'>m &lt;- matrix(1:10, ncol = 5)
 rownames(m) &lt;- c(&quot;row1&quot;, &quot;row2&quot;)
@@ -3427,19 +3455,17 @@ m</pre>
 ## row1       1       3       5       7       9
 ## row2       2       4       6       8      10</pre>
 
-</article></slide><slide class=""><hgroup><h2>Список</h2></hgroup><article  id="список">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-17">
 
-<ul>
-<li><em>индексированная последовательность</em></li>
-</ul>
+<p><strong>Список</strong> - <em>индексированная последовательность</em></p>
 
-<pre class = 'prettyprint lang-r'>list(1:2, &#39;data&#39;, matrix(1, nrow=2, ncol=2))</pre>
+<pre class = 'prettyprint lang-r'>list(1:2, &#39;../data&#39;, matrix(1, nrow=2, ncol=2))</pre>
 
 <pre >## [[1]]
 ## [1] 1 2
 ## 
 ## [[2]]
-## [1] &quot;data&quot;
+## [1] &quot;../data&quot;
 ## 
 ## [[3]]
 ##      [,1] [,2]
@@ -3462,7 +3488,9 @@ m</pre>
 ## [1,]    1    1
 ## [2,]    1    1</pre>
 
-</article></slide><slide class=""><hgroup><h2>Конкатенация списков</h2></hgroup><article  id="конкатенация-списков">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-18">
+
+<p><strong>Конкатенация списков</strong></p>
 
 <pre class = 'prettyprint lang-r'>l1 = list(uno = &#39;uno&#39;, second = 2, 4:5, fourth = matrix(1, nrow = 2, ncol = 2))
 l2 = list(first = &#39;first&#39;, 7:8 )
@@ -3488,7 +3516,9 @@ c(l1, l2)</pre>
 ## [[6]]
 ## [1] 7 8</pre>
 
-</article></slide><slide class=""><hgroup><h2>Доступ к элементам списка</h2></hgroup><article  id="доступ-к-элементам-списка">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-19">
+
+<p><strong>Доступ к элементам списка</strong></p>
 
 <pre class = 'prettyprint lang-r'>l1[1]</pre>
 
@@ -3503,7 +3533,9 @@ c(l1, l2)</pre>
 
 <pre >## [1] &quot;uno&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2>Функция lappy()</h2></hgroup><article  id="функция-lappy">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-20">
+
+<p><strong>lappy()</strong></p>
 
 <pre class = 'prettyprint lang-r'>lapply(l1, length)</pre>
 
@@ -3519,11 +3551,9 @@ c(l1, l2)</pre>
 ## $fourth
 ## [1] 4</pre>
 
-</article></slide><slide class=""><hgroup><h2>DataFrame</h2></hgroup><article  id="dataframe">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-21">
 
-<ul>
-<li>таблица из наблюдейний и переменных</li>
-</ul>
+<p><strong>DataFrame</strong> - таблица из наблюдейний и переменных</p>
 
 <pre class = 'prettyprint lang-r'>df = data.frame(x = 1:4, y = LETTERS[1:4], z = c(T, F))
 head(df)</pre>
@@ -3541,7 +3571,9 @@ head(df)</pre>
 ##  $ y: chr  &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot;
 ##  $ z: logi  TRUE FALSE TRUE FALSE</pre>
 
-</article></slide><slide class=""><hgroup><h2>Атрибуты как у матриц</h2></hgroup><article  id="атрибуты-как-у-матриц">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-22">
+
+<p><strong>Атрибуты как у матриц</strong></p>
 
 <pre class = 'prettyprint lang-r'>nrow(df)</pre>
 
@@ -3563,7 +3595,9 @@ head(df)</pre>
 
 <pre >## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2>Атрибуты как у списков</h2></hgroup><article  id="атрибуты-как-у-списков">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-23">
+
+<p><strong>Атрибуты как у списков</strong></p>
 
 <pre class = 'prettyprint lang-r'>length(df)</pre>
 
@@ -3573,7 +3607,9 @@ head(df)</pre>
 
 <pre >## [1] &quot;x&quot; &quot;y&quot; &quot;z&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2>Индексация, как у матриц</h2></hgroup><article  id="индексация-как-у-матриц">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-24">
+
+<p><strong>Индексация, как у матриц</strong></p>
 
 <pre class = 'prettyprint lang-r'>df[3:4, -1]</pre>
 
@@ -3587,7 +3623,9 @@ head(df)</pre>
 ## 1 TRUE 1
 ## 3 TRUE 3</pre>
 
-</article></slide><slide class=""><hgroup><h2>Индексация как у списков</h2></hgroup><article  id="индексация-как-у-списков">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-25">
+
+<p><strong>Индексация как у списков</strong></p>
 
 <pre class = 'prettyprint lang-r'>df$z</pre>
 
@@ -3607,7 +3645,9 @@ head(df)</pre>
 ## 3 3 C
 ## 4 4 D</pre>
 
-</article></slide><slide class=""><hgroup><h2>cbind, rbind vs merge</h2></hgroup><article  id="cbind-rbind-vs-merge">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-26">
+
+<p><strong>cbind, rbind vs merge</strong></p>
 
 <pre class = 'prettyprint lang-r'>df1 = data.frame(id = id &lt;- 1:3, letter1 = LETTERS[id])
 df2 = data.frame(id = id+1, letter2 = LETTERS[2*id])
@@ -3624,21 +3664,23 @@ cbind(df1, df2, by = &#39;id&#39;)</pre>
 ## 1  2       B       B
 ## 2  3       C       D</pre>
 
-</article></slide><slide class=""><hgroup><h2>Работа с директориями</h2></hgroup><article  id="работа-с-директориями">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-27">
 
-<h4>getwd() - возвращает текущую директорию</h4>
+<p><strong>Работа с директориями</strong> #### getwd() - возвращает текущую директорию</p>
 
 <pre class = 'prettyprint lang-r'>getwd()</pre>
 
-<pre >## [1] &quot;C:/Users/mary_/DataspellProjects/studyR&quot;</pre>
+<pre >## [1] &quot;C:/Users/mary_/DataspellProjects/studyR/slides&quot;</pre>
 
 <h4>setwd() - функция смены рабочей директории</h4>
 
 <p><code>r setwd(&#39;C:/Users/mary_/Documents/lectures&#39;)</code> #### функция file.show()</p>
 
-<pre class = 'prettyprint lang-r'>file.show(&#39;C:/Users/mary_/Documents/lectures/soy_phens.txt&#39;)</pre>
+<pre class = 'prettyprint lang-r'>file.show(&#39;../../../Documents/lectures/soy_phens.txt&#39;)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Импорт/экспорт данных</h2></hgroup><article  id="импортэкспорт-данных">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-28">
+
+<p><strong>Импорт/экспорт данных</strong></p>
 
 <h4>импорт</h4>
 
@@ -3648,15 +3690,13 @@ cbind(df1, df2, by = &#39;id&#39;)</pre>
 <li>write.table, write.csv</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Почему при импорте data.table числовые типы становытся строковыми?</h2></hgroup><article  id="почему-при-импорте-data.table-числовые-типы-становытся-строковыми">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-29">
 
-<ul>
-<li>из-за пропущенных значений, отмеченных не как NA na.string(&ldquo;NA&rdquo;)</li>
-<li>из-за неверно указанного разделителя sep = &ldquo;,&rdquo;, dec = &ldquo;.&rdquo;</li>
-<li>из-за ковычек сопроводительного текста или комментариев quote, comment.char, skip</li>
-</ul>
+<p><strong>Почему при импорте data.table числовые типы становытся строковыми?</strong> - из-за пропущенных значений, отмеченных не как NA na.string(&ldquo;NA&rdquo;) - из-за неверно указанного разделителя sep = &ldquo;,&rdquo;, dec = &ldquo;.&rdquo; - из-за ковычек сопроводительного текста или комментариев quote, comment.char, skip</p>
 
-</article></slide><slide class=""><hgroup><h2>Управляющие конструкции</h2></hgroup><article  id="управляющие-конструкции">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-30">
+
+<p><strong>Управляющие конструкции</strong></p>
 
 <pre class = 'prettyprint lang-r'>a &lt;- 10
 if (a &gt; 10){
@@ -3675,7 +3715,9 @@ if (a &gt; 10){
 ## [1] 4
 ## [1] 5</pre>
 
-</article></slide><slide class=""><hgroup><h2>Создание функций</h2></hgroup><article  id="создание-функций">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-31">
+
+<p><strong>Создание функций</strong></p>
 
 <pre class = 'prettyprint lang-r'>add_two &lt;- function(x){
     return(x + 2)
@@ -3685,7 +3727,7 @@ add_two(a)</pre>
 
 <pre >## [1] 12</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-3">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-32">
 
 <p><strong><em>Strings</em></strong></p>
 
@@ -3703,7 +3745,7 @@ sub(&quot;Curly&quot;, &quot;Moe&quot;, s)</pre>
 
 <pre >## [1] &quot;Moe is the smart one. Moe is funny, too.&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-4">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-33">
 
 <p><strong><em>Enviroment</em></strong></p>
 
@@ -3716,7 +3758,7 @@ sub(&quot;Curly&quot;, &quot;Moe&quot;, s)</pre>
 <li>среда, в которой в данный момент происходит выполнение программы называется <em>current enviroment</em></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-5">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-34">
 
 <p><strong><em>Enviroment</em></strong> <img src="data:image/jpeg;base64,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"></p>
 
@@ -3734,7 +3776,7 @@ sub(&quot;Curly&quot;, &quot;Moe&quot;, s)</pre>
 ## [[8]] $ &lt;env: Autoloads&gt;
 ## [[9]] $ &lt;env: package:base&gt;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-6">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-35">
 
 <p><strong><em>Enviroment</em></strong></p>
 
@@ -3752,12 +3794,12 @@ f &lt;- function(f_x){
 }
 f()</pre>
 
-<pre >## &lt;environment: 0x0000000013ba6fa0&gt;
-## &lt;environment: 0x0000000013ba6168&gt;
-## &lt;environment: 0x0000000013ba6168&gt;
+<pre >## &lt;environment: 0x0000000013bca378&gt;
+## &lt;environment: 0x0000000013bc9b60&gt;
+## &lt;environment: 0x0000000013bc9b60&gt;
 ## &lt;environment: R_GlobalEnv&gt;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-7">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-36">
 
 <p><strong><em>Enviroment</em></strong></p>
 
@@ -3787,7 +3829,7 @@ ls.str()</pre>
 ## x :  num 2
 ## z :  num 2</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-8">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-37">
 
 <p><strong><em>Enviroment</em></strong></p>
 
@@ -3800,7 +3842,7 @@ ls.str()</pre>
 <li>не копируются при изменении (modify in place)</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-9">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-38">
 
 <p><strong><em>modify in place</em></strong></p>
 
@@ -3819,7 +3861,7 @@ ls.str(e1)</pre>
 ## b :  num 2
 ## c :  num 4</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-10">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-39">
 
 <p><strong><em>copy-on-modify</em></strong></p>
 
@@ -3849,7 +3891,7 @@ list_e1</pre>
 ## $c
 ## [1] 3</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-11">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-40">
 
 <p><strong><em>Аттрибуты</em></strong></p>
 
@@ -3871,7 +3913,7 @@ attributes(a)</pre>
 <pre >## $x
 ## [1] &quot;abcdef&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-12">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-41">
 
 <p><strong><em>Аттрибуты</em></strong></p>
 
@@ -3890,7 +3932,7 @@ attributes(a)</pre>
 <pre >## $x
 ## [1] &quot;abcdef&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-13">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-42">
 
 <p><strong><em>Аттрибуты, которые можно добавить вектору</em></strong></p>
 
@@ -3915,7 +3957,7 @@ a</pre>
 <pre >##   one   two three 
 ##     1     2     3</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-14">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-43">
 
 <p><strong><em>Аттрибуты, которые можно добавить в списку</em></strong></p>
 
@@ -3948,7 +3990,7 @@ typeof(depots)</pre>
 ## $row.names
 ##  [1]  1  2  3  4  5  6  7  8  9 10 11</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-15">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-44">
 
 <p><strong><em>S3 - объекты</em></strong></p>
 
@@ -3966,7 +4008,7 @@ typeof(depots)</pre>
 <li>…</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-16">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-45">
 
 <p><strong><em>S3 - objects: Factor</em></strong></p>
 
@@ -3993,7 +4035,7 @@ x</pre>
 ## $class
 ## [1] &quot;factor&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-17">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-46">
 
 <p><strong><em>S3 - objects: Factor</em></strong></p>
 
@@ -4011,7 +4053,7 @@ table(sex_char)</pre>
 ## m f 
 ## 3 0</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-18">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-47">
 
 <p><strong><em>S3 - objects: Factor</em></strong></p>
 
@@ -4041,7 +4083,7 @@ depots</pre>
 ## 10      Калужское        1962           6
 ## 11       Свиблово        1978           6</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-19">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-48">
 
 <p><strong><em>S3 - objects: Date</em></strong></p>
 
@@ -4052,7 +4094,7 @@ depots</pre>
 <pre class = 'prettyprint lang-r'>today &lt;- Sys.Date()
 today</pre>
 
-<pre >## [1] &quot;2022-10-02&quot;</pre>
+<pre >## [1] &quot;2022-10-03&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>typeof(today)</pre>
 
@@ -4065,9 +4107,9 @@ today</pre>
 
 <pre class = 'prettyprint lang-r'>unclass(today) # number of days since 1970-01-01</pre>
 
-<pre >## [1] 19267</pre>
+<pre >## [1] 19268</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-20">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-49">
 
 <p><strong><em>S3 - objects: Date-time</em></strong></p>
 
@@ -4078,7 +4120,7 @@ today</pre>
 <li><p>базовый тип <em>list</em></p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-21">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-50">
 
 <p><strong><em>S3 - objects: Date-time</em></strong></p>
 
@@ -4089,7 +4131,7 @@ today</pre>
 <pre class = 'prettyprint lang-r'>today &lt;- Sys.time()
 today</pre>
 
-<pre >## [1] &quot;2022-10-02 23:31:29 MSK&quot;</pre>
+<pre >## [1] &quot;2022-10-03 17:25:50 MSK&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>typeof(today)</pre>
 
@@ -4102,9 +4144,9 @@ today</pre>
 
 <pre class = 'prettyprint lang-r'>unclass(today) # number of secs since 1970-01-01 03:00:00</pre>
 
-<pre >## [1] 1664742689</pre>
+<pre >## [1] 1664807151</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-22">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-51">
 
 <p><strong><em>S3 - objects: Date-time</em></strong></p>
 
@@ -4115,13 +4157,13 @@ today</pre>
 <pre class = 'prettyprint lang-r'>today &lt;- as.POSIXlt(Sys.time())
 today</pre>
 
-<pre >## [1] &quot;2022-10-02 23:31:29 MSK&quot;</pre>
+<pre >## [1] &quot;2022-10-03 17:25:50 MSK&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>typeof(today)</pre>
 
 <pre >## [1] &quot;list&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-23">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-52">
 
 <p><strong><em>S3 - objects: Date-time</em></strong></p>
 
@@ -4132,7 +4174,7 @@ today</pre>
 <pre class = 'prettyprint lang-r'>today &lt;- as.POSIXlt(Sys.time())
 today</pre>
 
-<pre >## [1] &quot;2022-10-02 23:31:29 MSK&quot;</pre>
+<pre >## [1] &quot;2022-10-03 17:25:50 MSK&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>attributes(today)</pre>
 
@@ -4146,7 +4188,7 @@ today</pre>
 ## $tzone
 ## [1] &quot;&quot;    &quot;MSK&quot; &quot;MSD&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-24">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-53">
 
 <p><strong><em>S3 - objects: Date-time</em></strong></p>
 
@@ -4157,21 +4199,21 @@ today</pre>
 <pre class = 'prettyprint lang-r'>today &lt;- as.POSIXlt(Sys.time())
 today</pre>
 
-<pre >## [1] &quot;2022-10-02 23:31:29 MSK&quot;</pre>
+<pre >## [1] &quot;2022-10-03 17:25:50 MSK&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>unclass(today)</pre>
 
 <pre >## $sec
-## [1] 29.59135
+## [1] 50.74572
 ## 
 ## $min
-## [1] 31
+## [1] 25
 ## 
 ## $hour
-## [1] 23
+## [1] 17
 ## 
 ## $mday
-## [1] 2
+## [1] 3
 ## 
 ## $mon
 ## [1] 9
@@ -4180,10 +4222,10 @@ today</pre>
 ## [1] 122
 ## 
 ## $wday
-## [1] 0
+## [1] 1
 ## 
 ## $yday
-## [1] 274
+## [1] 275
 ## 
 ## $isdst
 ## [1] 0
@@ -4197,7 +4239,7 @@ today</pre>
 ## attr(,&quot;tzone&quot;)
 ## [1] &quot;&quot;    &quot;MSK&quot; &quot;MSD&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-25">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-54">
 
 <p><strong><em>S3 - objects: Date-time</em></strong></p>
 
@@ -4208,14 +4250,14 @@ today</pre>
 <pre class = 'prettyprint lang-r'>today &lt;- as.POSIXlt(Sys.time())
 today</pre>
 
-<pre >## [1] &quot;2022-10-02 23:31:29 MSK&quot;</pre>
+<pre >## [1] &quot;2022-10-03 17:25:50 MSK&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>today$mon &lt;- today$mon + 1
 today</pre>
 
-<pre >## [1] &quot;2022-11-02 23:31:29 MSK&quot;</pre>
+<pre >## [1] &quot;2022-11-03 17:25:50 MSK&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-26">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-55">
 
 <p><strong><em>S3 - objects: duration</em></strong></p>
 
@@ -4225,11 +4267,11 @@ today</pre>
 
 <pre class = 'prettyprint lang-r'>Sys.time()</pre>
 
-<pre >## [1] &quot;2022-10-02 23:31:29 MSK&quot;</pre>
+<pre >## [1] &quot;2022-10-03 17:25:50 MSK&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>Sys.Date()</pre>
 
-<pre >## [1] &quot;2022-10-02&quot;</pre>
+<pre >## [1] &quot;2022-10-03&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>dif &lt;- difftime(Sys.time(), Sys.Date(), units = &quot;hours&quot;)
 typeof(dif)</pre>
@@ -4244,7 +4286,7 @@ typeof(dif)</pre>
 ## $units
 ## [1] &quot;hours&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-27">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-56">
 
 <p><strong><em>S3 - objects: duration</em></strong></p>
 
@@ -4269,7 +4311,7 @@ one_week_1</pre>
 ## $units
 ## [1] &quot;weeks&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-28">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-57">
 
 <p><em>Date-time</em> to <em>String</em></p>
 
@@ -4280,19 +4322,19 @@ one_week_1</pre>
 
 <pre class = 'prettyprint lang-r'>format(Sys.time())</pre>
 
-<pre >## [1] &quot;2022-10-02 23:31:29&quot;</pre>
+<pre >## [1] &quot;2022-10-03 17:25:50&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>as.character(Sys.time())</pre>
 
-<pre >## [1] &quot;2022-10-02 23:31:29&quot;</pre>
+<pre >## [1] &quot;2022-10-03 17:25:50&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>format(Sys.Date(), format=&quot;%m/%d/%Y&quot;)</pre>
 
-<pre >## [1] &quot;10/02/2022&quot;</pre>
+<pre >## [1] &quot;10/03/2022&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>as.character(Sys.Date(), format=&quot;%m/%d/%Y&quot;)</pre>
 
-<pre >## [1] &quot;10/02/2022&quot;</pre>
+<pre >## [1] &quot;10/03/2022&quot;</pre>
 
 <p><em>String</em> to <em>Date-time</em></p>
 
@@ -4322,7 +4364,7 @@ ff</pre>
 
 </article></slide><slide class=""><hgroup><h2>Факторы</h2></hgroup><article  id="факторы-1">
 
-<pre class = 'prettyprint lang-r'>df = read.table(&#39;C:/Users/mary_/Documents/lectures/soy_phens.txt&#39;, sep = &#39;\t&#39;, header = TRUE)
+<pre class = 'prettyprint lang-r'>df = read.table(&#39;../../../Documents/lectures/soy_phens.txt&#39;, sep = &#39;\t&#39;, header = TRUE)
 str(df)</pre>
 
 <pre >## &#39;data.frame&#39;:    328 obs. of  15 variables:
