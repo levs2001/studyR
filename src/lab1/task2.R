@@ -25,10 +25,3 @@ get_list_of_temperatures <- function(full_table) {
     mean_temp = mean_temperature
   )
 }
-
-setwd("/Users/lev.saskov/MyProgramms/Univercity/studyR/data")
-load("lab1_e2.Rdata")
-mean_temp <- get_list_of_temperatures(
-  get_full_table(all_data)
-)
-print(mean_temp)

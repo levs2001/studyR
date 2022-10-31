@@ -1,0 +1,25 @@
+---
+title: "Lab 1: Saskov"
+output: html_notebook
+---
+
+# Задание 1
+```{r}
+setwd("/Users/lev.saskov/MyProgramms/Univercity/studyR/data")
+data <- read.csv("lab1_e1.csv")
+source("../src/lab1/task1.R")
+fixed_data <- fix_data(data)
+fixed_data
+```
+
+# Задание 2
+```{r}
+setwd("/Users/lev.saskov/MyProgramms/Univercity/studyR/data")
+load("lab1_e2.Rdata")
+source("../src/lab1/task2.R")
+mean_temp <- get_list_of_temperatures(
+  get_full_table(all_data)
+)
+mean_temp
+```
+
