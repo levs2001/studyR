@@ -77,7 +77,8 @@ _ExpImp.Rdata_
 _Outcome-of-care-measure.csv_
 
 Файл содержит статистику смертности от 3х заболеваний – Heart Attack, Heart Failure, Pneumonia – в больницах разных Штатов США.
-Payment_and_value_of_Care-Hospital.csv
+
+_Payment_and_value_of_Care-Hospital.csv_
 Содержит стоимость лечения заболеваний в больницах США.
 
 _data2.csv, data1.txt_
