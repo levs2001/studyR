@@ -1756,10 +1756,24 @@ display: none;
 <h1>Задание 1</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjpbInNldHdkKFwiL1VzZXJzL2xldi5zYXNrb3YvTXlQcm9ncmFtbXMvVW5pdmVyY2l0eS9zdHVkeVIvZGF0YVwiKSIsImRhdGEgPC0gcmVhZC5jc3YoXCJsYWIxX2UxLmNzdlwiKSIsInNvdXJjZShcIi4uL3NyYy9sYWIxL3Rhc2sxLlJcIikiLCJmaXhlZF9kYXRhIDwtIGZpeF9kYXRhKGRhdGEpIiwiZml4ZWRfZGF0YSJdfQ== -->
-<pre class="r"><code>setwd(&quot;/Users/lev.saskov/MyProgramms/Univercity/studyR/data&quot;)
+<!-- rnb-source-begin eyJkYXRhIjpbInRyeV9nZXRfbnVtIDwtIGZ1bmN0aW9uKHN0cikge1xuICBudW0gPC0gdHJ5Q2F0Y2goXG4gIHtcbiAgICBhcy5udW1lcmljKGdzdWIoXCJcXFxcc1wiLCBcIlwiLCBzdHIpKVxuICB9LFxuICAgIGVycm9yID0gZnVuY3Rpb24oY29uZCkgc3RyLFxuICAgIHdhcm5pbmcgPSBmdW5jdGlvbihjb25kKSBzdHIsXG4gICAgZmluYWxseSA9IHsgfVxuICApXG59IiwiIiwiZml4X2RhdGEgPC0gZnVuY3Rpb24oZGF0YSkge1xuICBzYXBwbHkoZGF0YSwgZnVuY3Rpb24oc3RyKSBsYXBwbHkoc3RyLCB0cnlfZ2V0X251bSkpXG59IiwiIiwic2V0d2QoXCIvVXNlcnMvbGV2LnNhc2tvdi9NeVByb2dyYW1tcy9Vbml2ZXJjaXR5L0xlc3NvbnNSL3N0dWR5Ui9kYXRhXCIpIiwiZGF0YSA8LSByZWFkLmNzdihcImxhYjFfZTEuY3N2XCIpIiwiZml4ZWRfZGF0YSA8LSBmaXhfZGF0YShkYXRhKSIsImZpeGVkX2RhdGEiXX0= -->
+<pre class="r"><code>try_get_num &lt;- function(str) {
+  num &lt;- tryCatch(
+  {
+    as.numeric(gsub(&quot;\\s&quot;, &quot;&quot;, str))
+  },
+    error = function(cond) str,
+    warning = function(cond) str,
+    finally = { }
+  )
+}
+
+fix_data &lt;- function(data) {
+  sapply(data, function(str) lapply(str, try_get_num))
+}
+
+setwd(&quot;/Users/lev.saskov/MyProgramms/Univercity/LessonsR/studyR/data&quot;)
 data &lt;- read.csv(&quot;lab1_e1.csv&quot;)
-source(&quot;../src/lab1/task1.R&quot;)
 fixed_data &lt;- fix_data(data)
 fixed_data</code></pre>
 <!-- rnb-source-end -->
@@ -1808,10 +1822,37 @@ fixed_data</code></pre>
 <h1>Задание 2</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjpbInNldHdkKFwiL1VzZXJzL2xldi5zYXNrb3YvTXlQcm9ncmFtbXMvVW5pdmVyY2l0eS9zdHVkeVIvZGF0YVwiKSIsImxvYWQoXCJsYWIxX2UyLlJkYXRhXCIpIiwic291cmNlKFwiLi4vc3JjL2xhYjEvdGFzazIuUlwiKSIsIm1lYW5fdGVtcCA8LSBnZXRfbGlzdF9vZl90ZW1wZXJhdHVyZXMoXG4gIGdldF9mdWxsX3RhYmxlKGFsbF9kYXRhKVxuKSIsIm1lYW5fdGVtcCJdfQ== -->
-<pre class="r"><code>setwd(&quot;/Users/lev.saskov/MyProgramms/Univercity/studyR/data&quot;)
+<!-- rnb-source-begin eyJkYXRhIjpbImdldF9mdWxsX3RhYmxlIDwtIGZ1bmN0aW9uKGRhdGEpIHtcbiAgcmVzIDwtIGRhdGFbMV1cbiAgbGVuIDwtIGxlbmd0aChkYXRhKVxuICBmb3IgKGkgaW4gMjpsZW4pIHtcbiAgICByZXMgPC0gbWVyZ2UoeCA9IHJlcywgeSA9IGRhdGFbaV0sIGJ5ID0gXCJpZFwiLCBzdWZmaXhlcyA9IGMoaSAtIDEsIGkpKVxuICB9XG4gIHJlc1xufSIsIiIsImdldF9saXN0X29mX3RlbXBlcmF0dXJlcyA8LSBmdW5jdGlvbihmdWxsX3RhYmxlKSB7XG4gIHRlbXBlcmF0dXJlcyA8LSBmdWxsX3RhYmxlWy0xXVxuICBkYXlzX2NvdW50IDwtIGxlbmd0aCh0ZW1wZXJhdHVyZXMpXG4gIHBlb3BsZV9jb3VudCA8LSBucm93KGZ1bGxfdGFibGUpXG4gIG1lYW5fdGVtcGVyYXR1cmUgPC0gdmVjdG9yKGxlbmd0aCA9IHBlb3BsZV9jb3VudCwgbW9kZSA9IFwiZG91YmxlXCIpXG4gIGZvciAoaiBpbiAxOnBlb3BsZV9jb3VudCkge1xuICAgIHN1bV90ZW1wIDwtIDBcbiAgICBmb3IgKGVsIGluIHRlbXBlcmF0dXJlcykge1xuICAgICAgc3VtX3RlbXAgPC0gc3VtX3RlbXAgKyBlbFtqXVxuICAgIH1cbiAgICBtZWFuX3RlbXBlcmF0dXJlW2pdIDwtIHN1bV90ZW1wIC8gZGF5c19jb3VudFxuICB9XG5cbiAgZGF0YS5mcmFtZShcbiAgICBpZCA9IGZ1bGxfdGFibGVbMV0sXG4gICAgbWVhbl90ZW1wID0gbWVhbl90ZW1wZXJhdHVyZVxuICApXG59IiwiIiwic2V0d2QoXCIvVXNlcnMvbGV2LnNhc2tvdi9NeVByb2dyYW1tcy9Vbml2ZXJjaXR5L0xlc3NvbnNSL3N0dWR5Ui9kYXRhXCIpIiwibG9hZChcImxhYjFfZTIuUmRhdGFcIikiLCJtZWFuX3RlbXAgPC0gZ2V0X2xpc3Rfb2ZfdGVtcGVyYXR1cmVzKFxuICBnZXRfZnVsbF90YWJsZShhbGxfZGF0YSlcbikiLCJtZWFuX3RlbXAiXX0= -->
+<pre class="r"><code>get_full_table &lt;- function(data) {
+  res &lt;- data[1]
+  len &lt;- length(data)
+  for (i in 2:len) {
+    res &lt;- merge(x = res, y = data[i], by = &quot;id&quot;, suffixes = c(i - 1, i))
+  }
+  res
+}
+
+get_list_of_temperatures &lt;- function(full_table) {
+  temperatures &lt;- full_table[-1]
+  days_count &lt;- length(temperatures)
+  people_count &lt;- nrow(full_table)
+  mean_temperature &lt;- vector(length = people_count, mode = &quot;double&quot;)
+  for (j in 1:people_count) {
+    sum_temp &lt;- 0
+    for (el in temperatures) {
+      sum_temp &lt;- sum_temp + el[j]
+    }
+    mean_temperature[j] &lt;- sum_temp / days_count
+  }
+
+  data.frame(
+    id = full_table[1],
+    mean_temp = mean_temperature
+  )
+}
+
+setwd(&quot;/Users/lev.saskov/MyProgramms/Univercity/LessonsR/studyR/data&quot;)
 load(&quot;lab1_e2.Rdata&quot;)
-source(&quot;../src/lab1/task2.R&quot;)
 mean_temp &lt;- get_list_of_temperatures(
   get_full_table(all_data)
 )
@@ -1827,7 +1868,7 @@ mean_temp</code></pre>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTGFiIDE6IFNhc2tvdiIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyDQl9Cw0LTQsNC90LjQtSAxCmBgYHtyfQpzZXR3ZCgiL1VzZXJzL2xldi5zYXNrb3YvTXlQcm9ncmFtbXMvVW5pdmVyY2l0eS9zdHVkeVIvZGF0YSIpCmRhdGEgPC0gcmVhZC5jc3YoImxhYjFfZTEuY3N2IikKc291cmNlKCIuLi9zcmMvbGFiMS90YXNrMS5SIikKZml4ZWRfZGF0YSA8LSBmaXhfZGF0YShkYXRhKQpmaXhlZF9kYXRhCmBgYAoKIyDQl9Cw0LTQsNC90LjQtSAyCmBgYHtyfQpzZXR3ZCgiL1VzZXJzL2xldi5zYXNrb3YvTXlQcm9ncmFtbXMvVW5pdmVyY2l0eS9zdHVkeVIvZGF0YSIpCmxvYWQoImxhYjFfZTIuUmRhdGEiKQpzb3VyY2UoIi4uL3NyYy9sYWIxL3Rhc2syLlIiKQptZWFuX3RlbXAgPC0gZ2V0X2xpc3Rfb2ZfdGVtcGVyYXR1cmVzKAogIGdldF9mdWxsX3RhYmxlKGFsbF9kYXRhKQopCm1lYW5fdGVtcApgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTGFiIDE6IFNhc2tvdiIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyDQl9Cw0LTQsNC90LjQtSAxCmBgYHtyfQp0cnlfZ2V0X251bSA8LSBmdW5jdGlvbihzdHIpIHsKICBudW0gPC0gdHJ5Q2F0Y2goCiAgewogICAgYXMubnVtZXJpYyhnc3ViKCJcXHMiLCAiIiwgc3RyKSkKICB9LAogICAgZXJyb3IgPSBmdW5jdGlvbihjb25kKSBzdHIsCiAgICB3YXJuaW5nID0gZnVuY3Rpb24oY29uZCkgc3RyLAogICAgZmluYWxseSA9IHsgfQogICkKfQoKZml4X2RhdGEgPC0gZnVuY3Rpb24oZGF0YSkgewogIHNhcHBseShkYXRhLCBmdW5jdGlvbihzdHIpIGxhcHBseShzdHIsIHRyeV9nZXRfbnVtKSkKfQoKc2V0d2QoIi9Vc2Vycy9sZXYuc2Fza292L015UHJvZ3JhbW1zL1VuaXZlcmNpdHkvTGVzc29uc1Ivc3R1ZHlSL2RhdGEiKQpkYXRhIDwtIHJlYWQuY3N2KCJsYWIxX2UxLmNzdiIpCmZpeGVkX2RhdGEgPC0gZml4X2RhdGEoZGF0YSkKZml4ZWRfZGF0YQpgYGAKCiMg0JfQsNC00LDQvdC40LUgMgpgYGB7cn0KZ2V0X2Z1bGxfdGFibGUgPC0gZnVuY3Rpb24oZGF0YSkgewogIHJlcyA8LSBkYXRhWzFdCiAgbGVuIDwtIGxlbmd0aChkYXRhKQogIGZvciAoaSBpbiAyOmxlbikgewogICAgcmVzIDwtIG1lcmdlKHggPSByZXMsIHkgPSBkYXRhW2ldLCBieSA9ICJpZCIsIHN1ZmZpeGVzID0gYyhpIC0gMSwgaSkpCiAgfQogIHJlcwp9CgpnZXRfbGlzdF9vZl90ZW1wZXJhdHVyZXMgPC0gZnVuY3Rpb24oZnVsbF90YWJsZSkgewogIHRlbXBlcmF0dXJlcyA8LSBmdWxsX3RhYmxlWy0xXQogIGRheXNfY291bnQgPC0gbGVuZ3RoKHRlbXBlcmF0dXJlcykKICBwZW9wbGVfY291bnQgPC0gbnJvdyhmdWxsX3RhYmxlKQogIG1lYW5fdGVtcGVyYXR1cmUgPC0gdmVjdG9yKGxlbmd0aCA9IHBlb3BsZV9jb3VudCwgbW9kZSA9ICJkb3VibGUiKQogIGZvciAoaiBpbiAxOnBlb3BsZV9jb3VudCkgewogICAgc3VtX3RlbXAgPC0gMAogICAgZm9yIChlbCBpbiB0ZW1wZXJhdHVyZXMpIHsKICAgICAgc3VtX3RlbXAgPC0gc3VtX3RlbXAgKyBlbFtqXQogICAgfQogICAgbWVhbl90ZW1wZXJhdHVyZVtqXSA8LSBzdW1fdGVtcCAvIGRheXNfY291bnQKICB9CgogIGRhdGEuZnJhbWUoCiAgICBpZCA9IGZ1bGxfdGFibGVbMV0sCiAgICBtZWFuX3RlbXAgPSBtZWFuX3RlbXBlcmF0dXJlCiAgKQp9CgpzZXR3ZCgiL1VzZXJzL2xldi5zYXNrb3YvTXlQcm9ncmFtbXMvVW5pdmVyY2l0eS9MZXNzb25zUi9zdHVkeVIvZGF0YSIpCmxvYWQoImxhYjFfZTIuUmRhdGEiKQptZWFuX3RlbXAgPC0gZ2V0X2xpc3Rfb2ZfdGVtcGVyYXR1cmVzKAogIGdldF9mdWxsX3RhYmxlKGFsbF9kYXRhKQopCm1lYW5fdGVtcApgYGAKCg==</div>
 
 
 
