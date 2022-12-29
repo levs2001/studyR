@@ -1,22 +1,86 @@
 ---
-title: "R Notebook"
+title: "Lab 3: Saskov"
 output: html_notebook
 ---
 
-The [R plugin](https://www.jetbrains.com/help/pycharm/r-plugin-support.html) for IntelliJ-based IDEs provides
-handy capabilities to work with the [R Markdown](https://www.jetbrains.com/help/pycharm/r-markdown.html) files.
-To [add](https://www.jetbrains.com/help/pycharm/r-markdown.html#add-code-chunk) a new R chunk,
-position the caret at any line or the code chunk, then click "+".
+# Задание 9
+reforest.csv Файл содержит данные о лесовосстановлении (в тысяч га), полученные из регионального ежегодника Росстата за 2017 год. Файл содержит колонку с названием субъекта и еще 8 колонок с данными по годам. В файле есть пропущенные значения.
 
-The code chunk appears:
+Удалите строки, в которых есть пропущенные значения и приведите данные к формату tidydata. Отобразите динамику лесовосстановления по годам с помощью линейного графика для любого из федеральных округов, обозначив субъекты федерации разными цветами. Подпишите значения на графике. Отрегулируйте местоположение подписей так, чтобы рисунок был максимально наглядным. Придумайте новые назания графика и осей.
 ```{r}
+library(dplyr, warn.conflicts = FALSE)
+library(stringr)
+library(tidyr)
+library(readr)
+library(ggplot2)
+
+setwd("/Users/lev.saskov/MyProgramms/Univercity/LessonsR/studyR/data")
+
+data <- read_csv("reforest.csv", na = c("-", "NA"))
+fixed <- drop_na(data)
+is_distr <- str_detect(fixed$Region, "федеральный округ")
+distr_num <- 6
+begin <- which(is_distr == "TRUE")[distr_num] + 1
+end <- which(is_distr == "TRUE")[distr_num + 1] - 1
+regions <- fixed[begin:end, ]
+another <- pivot_longer(regions, !Region, names_to = "year", values_to = "value") |>
+  mutate(year = as.numeric(year))
+
+my_plot <- ggplot(another) +
+  geom_line(mapping = aes(x = year, y = value, color = Region)) +
+  geom_point(mapping = aes(x = year, y = value))
+my_plot <- my_plot + geom_text(aes(x = year, y = value, label = value), vjust = 0, nudge_y = 0.05)
+my_plot <- my_plot + xlab("Год") + ylab("Площадь(тысяч га)") + ggtitle(fixed$Region[[begin - 1]]) + theme(plot.title = element_text(hjust = 0.5))
+print(my_plot)
 ```
 
-Type any R code in the chunk, for example:
+# Задание 14
+В файлах содержатся значения фенотипических признаков сортов сои. Количественные признаки: Height, Protein, Oil, Productivity, GermBMatur. Качественные признаки: GrowthType, Polegaemost, MaturType. Идентификаторы сортов: V_1, V_2, …
+
+data2.csv, data1.txt Объедините data.frames по идентификаторам сортов. Исключите те сорта, для которых есть пропущенные значения. Для всех наблюдаемых величин из файла test_data1.txt (из первого дз), в которых содержится не более 80% пропущенных значений нарисовать гистограммы. Найтите корреляции Пирсона для количественных переменных. Постройте тепловую карту (heatmap).
+
+## Подзадача 14.1.
+data2.csv, data1.txt Объедините data.frames по идентификаторам сортов. Исключите те сорта, для которых есть пропущенные значения.
 ```{r}
-mycars <- within (mtcars, {cyl <- ordered (cyl)})
-mycars
+library(dplyr, warn.conflicts = FALSE)
+library(stringr)
+library(tidyr)
+library(ggplot2)
+
+setwd("/Users/lev.saskov/MyProgramms/Univercity/LessonsR/studyR/data")
+
+countable_signs_unf <- read.csv("data2.csv")
+countable_signs <- countable_signs_unf |> pivot_longer(!X, names_to = "Sample", values_to = "vals", values_drop_na = TRUE) |>
+  pivot_wider(names_from = X, values_from = vals)
+
+quality_signs_unf <- read.table("data1.txt", header = TRUE, skip = 1,)
+quality_signs <- quality_signs_unf[, colnames(quality_signs_unf)[2:5]] |> drop_na()
+
+res <- merge(countable_signs, quality_signs, by = "Sample")
+
+res
+```
+## Подзадача 14.2.
+Для всех наблюдаемых величин из файла data1.txt (из первого дз), в которых содержится не более 80% пропущенных значений нарисовать гистограммы.
+```{r}
+setwd("/Users/lev.saskov/MyProgramms/Univercity/LessonsR/studyR/data")
+
+df <- read.table("data1.txt", header = TRUE, skip = 1,)
+df <- quality_signs_unf[, colnames(quality_signs_unf)[2:5]]
+# Условие про 80 процентов очень странное, там везде меньше 80 процентов
+# Строим гистограмму для Height:
+hist(df$Height, main = "Histogram of height", xlab = "Height")
+# Строим гистограмму для Height:
+hist(df$Protein, main = "Histogram of protein", xlab = "Protein")
+# Строим гистограмму для Height:
+hist(df$Oil, main = "Histogram of oil", xlab = "Oil")
+
+```
+# Подзадача 14.3.
+Построение heatmap для коэффициента Пирсона у количественных переменных.
+```{r}
+fixed <- drop_na(df)[2:4]
+cormat <- cor(fixed)
+heatmap(cormat)
 ```
 
-Now, click the **Run** button on the chunk toolbar to [execute](https://www.jetbrains.com/help/pycharm/r-markdown.html#run-r-code) the chunk code. The result should be placed under the chunk.
-Click the **Knit and Open Document** to build and preview an output.
